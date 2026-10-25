@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--n1:#06122b;--n2:#0e2a5c;--n3:#17407f;--ink:#eaf2ff;--soft:#9fc0f0;--glass:rgba(40,90,170,.35);--script:"Great Vibes","Brush Script MT",cursive;--sans:"Quicksand",system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:inherit}
+html,body{margin:0;min-height:100%}
+body{background:var(--n1) radial-gradient(1.5px 1.5px at 20% 30%,#fff8,transparent),radial-gradient(1.5px 1.5px at 70% 60%,#fff8,transparent),radial-gradient(1px 1px at 40% 80%,#fff8,transparent),linear-gradient(180deg,var(--n2),var(--n1) 60%);background-size:300px 300px,400px 400px,250px 250px,100% 100%;color:var(--ink);font-family:var(--sans);overflow-x:hidden;text-align:center}
+.hidden{display:none!important}
+.scr{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.sc{font-family:var(--script);font-size:clamp(2.2rem,10vw,3.4rem);margin:.2em 0;font-weight:400}
+h3{font-weight:600;font-size:1.15rem;margin:.3em 0;letter-spacing:.5px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:.7em 1.6em;color:#fff;background:#2f6bff;box-shadow:0 6px 18px #0006;transition:transform .2s}
+button.alt{background:#5b7fb8}
+sec{display:block}
+.sec{padding:60px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;min-height:80vh;justify-content:center}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+/* envelope */
+.env{position:relative;width:min(240px,66vw);height:min(160px,44vw);margin:36px auto 18px;cursor:pointer;animation:fl 3s ease-in-out infinite;transform:rotate(-4deg)}
+.env .b{position:absolute;inset:0;background:#123468;border-radius:6px;box-shadow:0 14px 30px #000a}
+.env .l{position:absolute;left:8%;right:8%;top:8%;height:80%;background:#f4f7ff;border-radius:4px;transition:transform .8s .4s}
+.env .f{position:absolute;inset:0;background:linear-gradient(135deg,transparent 49.5%,#1b4b92 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.5%,#1b4b92 50%) right/50% 100% no-repeat;border-radius:6px}
+.env .t{position:absolute;left:0;top:0;width:100%;height:62%;background:#1e5099;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s;z-index:3}
+.env .s{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8fb3e8,#3a62a8);z-index:4;box-shadow:0 2px 6px #0008;transition:opacity .3s}
+.env.open .t{transform:rotateX(180deg);z-index:0}.env.open .l{transform:translateY(-55%)}.env.open .s{opacity:0}
+@keyframes fl{50%{transform:translateY(-8px) rotate(-4deg)}}
+.cur::after{content:"|";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+/* question */
+.card{background:var(--glass);backdrop-filter:blur(6px);border:1px solid #fff3;border-radius:22px;padding:28px 22px;max-width:420px;width:100%;box-shadow:0 14px 34px #0006}
+.btns{display:flex;gap:14px;justify-content:center;align-items:center;margin-top:20px;flex-wrap:wrap;min-height:70px}
+.shake{animation:sh .5s}@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+/* calendar */
+.cal{background:var(--n3);border-radius:20px;padding:18px 16px;width:min(300px,85vw);box-shadow:0 10px 26px #0008;position:relative}
+.cal .sc{margin:-46px 0 6px;text-shadow:0 2px 8px #000a}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;font-size:.9rem}
+.grid span{aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.grid span.bd{background:#fff;color:var(--n2);border-radius:50% 50% 50% 0;transform:rotate(-45deg);font-weight:700;animation:bt 1.3s infinite}
+.grid span.bd i{font-style:normal;transform:rotate(45deg)}
+@keyframes bt{50%{transform:rotate(-45deg) scale(1.2)}}
+/* player */
+.pl{display:flex;align-items:center;gap:12px;background:#2547d8;border-radius:12px;padding:10px 14px;width:min(320px,88vw);box-shadow:0 8px 20px #0008;text-align:left}
+.pl .cv{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#8fb3e8,#173a8c);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.pl .tt{flex:1;font-size:.9rem;line-height:1.3}.pl .tt small{opacity:.75}
+.pl button{padding:.5em .9em;background:#fff;color:#2547d8;font-size:1.1rem}
+.eq{display:inline-flex;gap:2px;height:12px;align-items:flex-end}.eq i{width:3px;background:#fff;height:4px}
+.on .eq i{animation:eq .6s infinite alternate}.on .eq i:nth-child(2){animation-delay:.2s}.on .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{to{height:12px}}
+/* slots */
+.sl{background:#cfe0ff center/cover no-repeat;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:2rem;color:#2a4f94}
+.cam{width:min(280px,80vw);border-radius:18px;padding:16px;background:linear-gradient(145deg,#4b86e6,#143a85 60%,#0b2358);box-shadow:0 12px 28px #000a,inset 0 2px 4px #fff5;display:flex;gap:12px;align-items:center}
+.cam .sl{width:58%;aspect-ratio:1;border-radius:8px;border:3px solid #0b2358}
+.cam .ln{flex:1;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#0a1330 30%,#3f6fc4 34%,#0c2257 60%,#9cc0ff 63%,#1a3a80);box-shadow:0 0 0 3px #0b2358}
+.pad{background:#fff;color:#14264a;border-radius:6px;padding:26px 16px 16px;width:min(300px,86vw);font-size:.92rem;line-height:1.55;position:relative;box-shadow:0 10px 24px #000a;outline:none}
+.pad::before{content:"";position:absolute;top:-6px;left:0;right:0;height:18px;background:#14264a;border-radius:6px 6px 0 0}
+.pl2{background:#f4f4f0;padding:6px 6px 22px;box-shadow:0 8px 18px #0009;width:130px;opacity:0;transform:scale(0) rotate(0)}
+.pl2 .sl{aspect-ratio:1;font-size:1.8rem;min-height:120px}
+.moonw.in .pl2{animation:pp .8s cubic-bezier(.3,1.6,.5,1) forwards;animation-delay:var(--d)}
+@keyframes pp{to{opacity:1;transform:scale(1) rotate(var(--r))}}
+.moon{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#c9d6ea 40%,#8fa4c6 80%);box-shadow:0 0 50px #9fc0f088;margin:6px auto}
+.pls{display:flex;flex-direction:column;gap:16px;align-items:center;width:100%}
+.pls .pl2:nth-child(odd){margin-right:70px}.pls .pl2:nth-child(even){margin-left:70px}
+.plaid{background:repeating-linear-gradient(45deg,#18213c 0 14px,#212c4e 14px 28px),#18213c;width:100%}
+.dash{border:2px dashed #cfe0ff;border-radius:6px;padding:14px 18px;max-width:260px;background:#0e1d3f}
+.ltr{background:#f4f7ff;color:#14264a;padding:16px;border-radius:6px;width:min(280px,84vw);font-size:.9rem;line-height:1.5;outline:none;box-shadow:0 8px 20px #000a}
+.msg{background:linear-gradient(#0e2a5c,#0a1f47);border:1px solid #9fc0f0aa;border-radius:24px;padding:22px 18px;width:min(330px,88vw);font-size:.92rem;line-height:1.6;outline:none;box-shadow:0 10px 26px #000a}
+.oval{width:180px;height:230px;border-radius:50%;border:6px solid #8fb3e8;box-shadow:0 0 0 3px #1b4b92,0 10px 26px #000a;overflow:hidden}
+.oval.sl{border-radius:50%}
+.big{font-size:2.6rem}
+.hint{font-size:.8rem;opacity:.7;padding:30px 20px 50px}
+.fall{position:fixed;top:-30px;font-size:1.5rem;pointer-events:none;animation:fa linear forwards;z-index:10}@keyframes fa{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<audio id="audio" loop></audio>
+
+<section id="s1" class="scr">
+  <div class="sc cur" id="hb" style="min-height:2.6em"></div>
+  <div class="env" id="env"><div class="b"></div><div class="l"></div><div class="f"></div><div class="t"></div><div class="s"></div></div>
+  <p>Tap to open</p>
+</section>
+
+<section id="s2" class="scr hidden">
+  <div class="card" id="qc">
+    <!-- <div class="big">🥰</div> -->
+    <div class="sc" id="qt">Kamu sayang aku gak? 😅😅</div>
+    <!-- <p id="qs">Jawab jujur ya...</p> -->
+    <div class="btns"><button id="yes">Sayang 💕</button><button id="no" class="alt">Nggak 😒</button></div>
+  </div>
+</section>
+
+<main id="main" class="hidden">
+  <section class="sec rv">
+    <h3>The Day My Favorite Person Was Born</h3>
+    <div class="cal"><div class="sc" id="mn"></div><div class="grid" id="gr"></div></div>
+  </section>
+
+  <section class="sec rv" style="min-height:40vh">
+    <p>Kenapa lagu ini? karena kamu suka LANY, dan ini lagu kayaknya aku banget deh wkwkwkwwk.</p>
+    <div class="pl" id="pl"><div class="cv">🎵</div><div class="tt">Out Of My League<br><small>LANY<span style="opacity:.8"></span></small></div><span class="eq"><i></i><i></i><i></i></span><button id="pp">▶</button></div>
+  </section>
+
+  <section class="sec rv">
+    <h3>Today Is All About You</h3>
+    <div class="cam"><div class="sl" data-s>📷</div><div class="ln"></div></div>
+    <div class="pad" contenteditable="false">Hari ini tuh, harinya Qania akuuu!!! hihihihiii. Walaupun langsung disambut TKA, janga bersedih ya sayang. TKA kan Tinggal Klik Aja aowkoakwoakwoakwa. Happy Birthday yang ke 18 sayaanggg, I love you so muchh!</div>
+    <div class="big">🎂</div>
+  </section>
+
+  <section class="sec plaid rv">
+    <div class="sc">A Little Letter</div>
+    <div class="ltr" contenteditable="false">Aku cuma mau ngingetin ke kamu, aku pasti ada capeknya, pasti ada overheatnya, tapi bukan berarti aku bakal menyerah ya ntul. I always love you sayang.</div>
+    <div class="big">🧸🎁</div>
+    <div class="dash">You deserve all the good things coming your way.</div>
+  </section>
+
+  <section class="sec moonw rv" id="mw">
+    <h3>You are my moon</h3>
+    <div class="moon"></div>
+    <div class="pls" id="pls"></div>
+    <div class="big">🚀</div>
+    <p>And I could never get tired<br>of looking at you.</p>
+  </section>
+
+  <section class="sec rv" style="background:#08163a;width:100%">
+    <div class="sc">Message for you</div>
+    <div class="big">☕</div>
+    <div class="msg" contenteditable="false">Selamat ulang tahun sayanggkuu!!! 😙😙. Aku ga bakal ngetik banyak sih disini, udah setengah 12 malem coyyy udh ga kepikiran apa2 aku. Aduh jadi ketauan deh buatnya mendadak 😁. Yang pasti
+      doa aku buat kamu tu panjang umur teruss, sehat teruss, badannya fitt, rajinn, pinnterrr, lolos PTN, lulus cumlaude, dapet kerjaan, nikah sama aku, eh ini mah doanya aku wkekekwke 🏃‍♂️🏃‍♂️. Bahagia terus ya sayaang, jangan sedih sedihh. 
+      Inget kamu ini punya aku sayang; yang selalu ada di sisi kamuu; okeey? Aku selalu ada disini buat kamu, buat nemenin kamu, buat dengerin kamu, buat ngelindungin kamu, buat ngejagain kamu, buat nyenengin kamu, buat bikin kamu ketawa, buat bikin kamu seneng, buat bikin kamu bahagia, dan masih banyak lagi.
+      Doa & harapan aku kalau dijabarin semua disini, BEHHHH kaga muat coyy aseli dah. Pokoknya aku sayang kamu bangett ngett ngettt sedunia semuanya hwahwahwahwawhawhaha.
+    </div>
+    <div class="big">🚗💨</div>
+  </section>
+
+  <section class="sec rv">
+    <div class="big">🎉</div>
+    <div class="oval sl" data-s>🤍</div>
+    <h3>One Last Thing</h3>
+    <div class="msg" contenteditable="false" style="background:#3a63a8">Makasih udah mau nerima aku lagi ya sayang, aku masi ga nyangka bisa dapetin kamu. Masi banyak yang mau aku sampein, tunggu surat2 dari aku selanjutnya yaaa 🫶</div>
+  </section>
+  <!-- <p class="hint">Semua pengaturan foto, tanggal, dan lagu diatur dari kode di file HTML/JS. Tidak ada editor di halaman.</p> -->
+</main>
+
+<script>
+const NAMA="Sayang!"; // ganti nama di sini
+const BIRTHDAY="2008-10-26"; // ganti tanggal di sini
+const SONG_URL="LANY - Out Of My League (Official Lyric Video).mp3"; // contoh: "song/hbd.mp3" atau URL audio. Kosongkan jika tidak pakai lagu.
+const PHOTO_URLS={
+  primary:"1.jpeg",
+  last:"2.jpeg",
+  polaroids:["3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg"]
+};
+const $=id=>document.getElementById(id);
+let ctx,playing=false,timer,useFile=Boolean(SONG_URL);
+const N={C:261.63,D:293.66,E:329.63,F:349.23,G:392,A:440,B:466.16,H:523.25};
+const tune=[["C",.75],["C",.25],["D",1],["C",1],["F",1],["E",2],["C",.75],["C",.25],["D",1],["C",1],["G",1],["F",2],["C",.75],["C",.25],["H",1],["A",1],["F",1],["E",1],["D",2],["B",.75],["B",.25],["A",1],["F",1],["G",1],["F",2]];
+if (SONG_URL) { $("audio").src = SONG_URL; }
+
+function playTune(){if(!playing||useFile)return;let t=ctx.currentTime+.05;
+  tune.forEach(([n,d])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type="triangle";o.frequency.value=N[n];
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.25,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+d*.5);
+    o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+d*.5);t+=d*.5});
+  timer=setTimeout(playTune,(t-ctx.currentTime+1)*1000)}
+function startM(){playing=true;$("pp").textContent="❚❚";$("pl").classList.add("on");
+  if(useFile){$("audio").play().catch(()=>{});return}
+  ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();ctx.resume();playTune()}
+function stopM(){playing=false;$("pp").textContent="▶";$("pl").classList.remove("on");clearTimeout(timer);$("audio").pause()}
+$("pp").onclick=()=>playing?stopM():startM();
+
+// ketik "Happy Birthday"
+const hbT="Happy Birthday\n"+NAMA;let hi=0;
+(function ty(){ $("hb").innerHTML=hbT.slice(0,hi).replace("\n","<br>"); if (hi++<hbT.length) setTimeout(ty,90) })();
+
+$("env").onclick=()=>{$("env").classList.add("open");startM();
+  setTimeout(()=>{$("s1").classList.add("hidden");$("s2").classList.remove("hidden")},1800)};
+
+const tries=[["Kamu sayang aku gak?","Jawab jujur..."],["Serius nggak sayang? 🥺","Coba dipikir lagi deh..."],["Mangeak sih nggak? 😢","Yakin banget?"],["Please, sekali lagi... 🥹","Tombol Sayang makin gede lho!"],["Ayo dong jujur 😤","Aku tungguin sampai kamu jawab sayang!"]];
+let n=0,sc=1;
+$("no").onclick=()=>{n++;sc+=.25;const c=$("qc");c.classList.remove("shake");void c.offsetWidth;c.classList.add("shake");
+  $("qt").textContent="Hah? Nggak?! 😭";$("qs").textContent="Oke, aku tanya ulang...";
+  setTimeout(()=>{const q=tries[Math.min(n,4)];$("qt").textContent=q[0];$("qs").textContent=q[1]},1300);
+  $("yes").style.transform="scale("+sc+")";$("yes").style.margin=(sc*8)+"px";$("no").style.transform="scale("+Math.max(.5,1-n*.1)+")"};
+$("yes").onclick=()=>{$("s2").classList.add("hidden");$("main").classList.remove("hidden");window.scrollTo(0,0);
+  buildCal();buildPol();applyPhotoFromCode();confetti();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.2});
+  document.querySelectorAll(".rv").forEach(x=>io.observe(x))};
+
+// kalender
+const BLN=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+let bday=BIRTHDAY;
+function buildCal(){const[y,m,d]=bday.split("-").map(Number);const off=new Date(y,m-1,1).getDay(),tot=new Date(y,m,0).getDate();
+  let h="SMTWTFS".split("").map(x=>"<b>"+x+"</b>").join("");
+  for(let i=0;i<off;i++)h+="<span></span>";
+  for(let k=1;k<=tot;k++)h+=k===d?'<span class="bd"><i>'+k+"</i></span>":"<span>"+k+"</span>";
+  $("gr").innerHTML=h;$("mn").textContent=BLN[m-1]}
+
+// polaroid
+function buildPol(){const g=$("pls");g.innerHTML="";const icons=["🌙","⭐","💫","🌸","✨"];
+  icons.forEach((e,i)=>{const p=document.createElement("div");p.className="pl2";
+    p.style.setProperty("--r",((i%2?1:-1)*(3+i))+"deg");p.style.setProperty("--d",(.3+i*.4)+"s");
+    p.innerHTML='<div class="sl" data-photo-index="'+i+'">'+e+"</div>";g.appendChild(p)})}
+
+function applyPhotoFromCode(){
+  const setPhoto=(el, url, fallback)=>{
+    if (!el) return;
+    if (url && url.trim()) {
+      el.textContent="";
+      el.style.backgroundImage="url('"+url+"')";
+      el.style.backgroundSize="cover";
+      el.style.backgroundPosition="center";
+      return;
+    }
+    el.style.backgroundImage="";
+    el.textContent=fallback;
+  };
+
+  const slots=document.querySelectorAll("[data-s]");
+  setPhoto(slots[0], PHOTO_URLS.primary, "📷");
+  setPhoto(slots[slots.length - 1], PHOTO_URLS.last, "🤍");
+
+  const polaroids=document.querySelectorAll("[data-photo-index]");
+  polaroids.forEach((el)=>{
+    const idx=Number(el.getAttribute("data-photo-index"));
+    const url=PHOTO_URLS.polaroids[idx];
+    const fallback=["🌙","⭐","💫","🌸","✨"][idx] || "✨";
+    setPhoto(el, url, fallback);
+  });
+}
+
+function confetti(){const s=["🎉","🎈","💙","✨","🎊","⭐"];for(let i=0;i<36;i++){const d=document.createElement("div");d.className="fall";d.textContent=s[i%6];
+  d.style.left=Math.random()*100+"vw";d.style.animationDuration=(3+Math.random()*3)+"s";d.style.animationDelay=Math.random()*2+"s";document.body.appendChild(d);setTimeout(()=>d.remove(),8000)}}
+</script>
+</body>
+</html>
